@@ -1,0 +1,13 @@
+<div class="todo" id="todo-{{ todo.id }}">
+  <span>
+    <input hx-patch="/todo/{{ todo.id }}" hx-trigger="change" hx-include="this" type="checkbox" {% if todo.checked %}
+      checked {% endif ~%} name="done" hx-include="[name='done']" />
+    <span hx-disable>
+      {{ todo.name }}
+    </span>
+  </span>
+  <a href="/todo/{{ todo.id }}" hx-delete="/todo/{{ todo.id }}" hx-target="#todo-{{ todo.id }}" hx-swap="outerHTML"
+    class="danger-link">
+    Delete
+  </a>
+</div>

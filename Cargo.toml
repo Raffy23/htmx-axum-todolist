@@ -1,0 +1,37 @@
+[package]
+name = "htmx-axum-todolist"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release-lto]
+inherits = "release"
+lto="fat"
+strip="symbols"
+
+[dependencies]
+askama = { version = "0.12.1", features = ["config", "mime", "mime_guess", "with-axum"] }
+askama_axum = { version = "0.4.0", features = ["config"] }
+async-trait = "0.1.77"
+axum = { version = "0.7.4", features = ["http2", "macros"] }
+axum-htmx = "0.5.0"
+axum-prometheus = "0.6.1"
+axum_csrf = { version = "0.9.0", features = ["layer"] }
+axum_session = { version = "0.12.4", features = ["sqlite-native"], default-features = false }
+base64 = "0.21.7"
+blake3 = "1.5.0"
+clap = "4.5.0"
+futures-util = "0.3.30"
+lazy_static = "1.4.0"
+metrics = "0.22.0"
+rand = "0.8.5"
+serde = "1.0.196"
+serde_derive = "1.0.196"
+sha2 = "0.10.8"
+sqlx = { version = "0.7.3", features = ["runtime-tokio", "sqlite"] }
+tokio = { version = "1.36.0", features = ["full"] }
+tower-http = { version = "0.5.1", features = ["fs", "compression-gzip", "compression-br", "trace"] }
+tracing = "0.1.40"
+tracing-futures = { version = "0.2.5", features = ["tokio"] }
+tracing-log = "0.2.0"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+uuid = { version = "1.7.0", features = ["v4", "serde"] }

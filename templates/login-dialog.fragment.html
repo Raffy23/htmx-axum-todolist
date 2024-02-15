@@ -1,0 +1,29 @@
+{% if has_user ~%}
+<dialog id="login_dialog" {%~ if oob %} hx-swap-oob="true" {% endif %}>
+</dialog>
+{% else %}
+<dialog id="login_dialog" open {%~ if oob %} hx-swap-oob="true" {% endif %}>
+  <article>
+    <header>
+        <h3>Hello there o/</h3>
+    </header>
+    <p>
+      It seems that you are not logged in at the moment. <br />
+      To load your notes paste the secret below and click "Login":
+    </p>
+    <form id="login_form" action="/login" method="post" hx-post="/login" hx-trigger="submit">
+      <input type="text" name="user_secret" placeholder="00000000-0000-0000-0000-000000000000" />
+    </form>
+    <footer>
+      <form class='inline-block' method="dialog">
+        <button class="secondary" type="submit">
+          New User
+        </button>
+      </form>
+      <button type="submit" form="login_form">
+        Login
+      </button>
+    </footer>
+  </article>
+</dialog>
+{% endif %}

@@ -1,0 +1,5 @@
+<div id="todo-list" {%~ if oob %} hx-swap-oob="true" {% endif %}>
+    {% for todo in todos %}
+    {% include "todo.fragment.html" %}
+    {% endfor %}
+</div>

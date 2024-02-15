@@ -1,0 +1,10 @@
+<div id="todo-summary" {%~ if oob %} hx-swap-oob="true" {% endif %} {%- if todos.len() == 0 ~%} class="show-border" {%- endif -%}>
+  <div id="todo-summary-text">
+    {%- if todos.len() > 0 -%}
+    {{- self::unchecked_todos(todos) ~}} items left!
+    {%- endif -%}
+  </div>
+  <a href="/settings" hx-get="/settings" hx-swap="none">
+    Settings
+  </a>
+</div>

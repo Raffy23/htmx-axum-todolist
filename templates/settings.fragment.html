@@ -1,0 +1,27 @@
+<dialog id="settings_dialog" hx-swap-oob="true" {% if show_settings ~%} open {% endif %}>
+  <article>
+    <header>
+      <h3>⚙️ Settings</h3>
+    </header>
+    <p>
+      The user ID should not be shared with others, it allows everyone that knows it
+      to view, edit and delete your notes!
+    </p>
+    <ul>
+      <li>User ID: <code>{{ user_id }}</code></li>
+      <li>
+        <div class="logout-entry">
+          <span>Logout:</span>
+          <a href="/logout" class="danger-link" hx-post="/logout">Logout</a>
+        </div>
+      </li>
+    </ul>
+    <footer>
+      <form class='inline-block' method="dialog">
+        <button type="submit">
+          Close
+        </button>
+      </form>
+    </footer>
+  </article>
+</dialog>

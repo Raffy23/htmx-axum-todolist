@@ -1,0 +1,7 @@
+{% set oob = true %}
+{% set has_user = false %}
+
+<div id="todo-list" hx-swap-oob="true"></div>
+<dialog id="settings_dialog" hx-swap-oob="true"></dialog>
+<div id="todo-summary-text" hx-swap-oob="true"></div>
+{% include "login-dialog.fragment.html" %}

@@ -1,0 +1,7 @@
+<form id="new_todo" action="/todo" method="post" hx-post="/todo" hx-trigger="submit" hx-target="#todo-list"
+  hx-swap="beforeend" {%~ if oob %} hx-swap-oob="true" {% endif %}>
+  <fieldset role="group">
+    <input type="text" name="todo_content" placeholder="What needs to be done?" />
+    <input type="submit" value="Add" />
+  </fieldset>
+</form>

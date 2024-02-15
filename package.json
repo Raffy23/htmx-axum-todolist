@@ -1,0 +1,16 @@
+{
+  "name": "htmx-axum-todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@picocss/pico": "^2.0.0-rc4",
+    "feather-icons": "^4.29.1",
+    "htmx.org": "^1.9.10"
+  }
+}

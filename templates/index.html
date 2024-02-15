@@ -1,0 +1,23 @@
+{% extends "_layout.html" %}
+
+{%- block title %}Todos{% endblock %}
+
+{%- block content %}
+<header>
+  <hgroup>
+    <h1>Todo List</h1>
+    <p>Your place to save important notes</p>
+  </hgroup>
+</header>
+<main>
+  <article>
+    {% set oob = false %}
+    {% include "todo-form.fragment.html" %}
+    {% include "todo-list.fragment.html" %}
+    {% include "todo-summary.fragment.html" %}
+  </article>
+</main>
+{%- if !has_user -%}
+{% include "login-dialog.fragment.html" %}
+{%- endif -%}
+{% endblock %}

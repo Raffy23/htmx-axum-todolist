@@ -1,0 +1,24 @@
+{%- if partial %}
+{% block content %}{% endblock %}
+{%- else %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="/assets/pico.min.css" />
+  <link rel="stylesheet" href="/assets/app.css" />
+
+  <title>{%- block title %}{{ title }}{% endblock %}</title>
+</head>
+
+<body class=".container-fluid">
+  {%- block content %}{% endblock %}
+  <script src="/assets/htmx.min.js" integrity=" {{ integrity_htmx_js }}"></script>
+  <dialog id="settings_dialog"></dialog>
+</body>
+
+</html>
+{%- endif %}
